@@ -1,6 +1,11 @@
-import { expect, it } from 'vitest';
-import { add2Nums } from './index';
+import { describe, expect, test } from 'vitest';
+import { getLenOfLongestSubstringWithoutRepeatingChars } from '.';
 
-it('adds 2 + 2 to equal 4', () => {
-  expect(add2Nums(2, 2)).toBe(4);
+describe('getLenOfLongestSubstringWithoutRepeatingChars', () => {
+  test('Find the length of the longest substring without repeating characters', () => {
+    const input = 'abbbcabcdefef';
+    const output = 6;
+
+    expect(getLenOfLongestSubstringWithoutRepeatingChars(input)).toBe(output);
+  });
 });
