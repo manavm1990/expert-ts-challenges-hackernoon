@@ -1,0 +1,24 @@
+{
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsc-watch --onSuccess \"node --experimental-specifier-resolution=node dist/src/index.js\"",
+    "test": "vitest watch --coverage",
+    "tsc": "tsc -w"
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "@vitest/coverage-c8": "^0.24.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-xo": "^0.42.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.8.4",
+    "vitest": "^0.24.0"
+  },
+  "type": "module"
+}
