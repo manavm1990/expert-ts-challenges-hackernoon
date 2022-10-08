@@ -19,5 +19,5 @@
   "prettier.requireConfig": true,
   "typescript.validate.enable": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "cSpell.words": ["Strs"]
+  "cSpell.words": ["abbbcabcdefef", "Strs"]
 }
