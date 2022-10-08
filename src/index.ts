@@ -1,23 +1,30 @@
 export const getLenOfLongestSubstringWithoutRepeatingChars = (
   str: string,
 ): number => {
-  let longest = 0;
-  let current = 0;
-
-  const sub = new Set();
-
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-
-    if (sub.has(char)) {
-      current = 0;
-      sub.clear();
-    }
-
-    sub.add(char);
-    current++;
-    longest = Math.max(longest, current);
+  // If the string is empty, return 0
+  if (str.length === 0) {
+    return 0;
   }
 
-  return longest;
+  // Start building a substring from the first character until we duplicate a character
+  return str
+    .split('')
+    .reduce(
+      (acc, char, index, origin) => {
+        const lastI = acc.length - 1;
+
+        // Either append to the last string in 'acc' or start a new one (if duplicate char)
+        const lastString = acc[lastI];
+
+        if (lastString.includes(char)) {
+          // Append a new string that goes back to the last occurrence of the duplicate char (+ 1)
+          return [...acc, str.slice(str.lastIndexOf(char, index - 1), index)];
+        }
+
+        acc[lastI] = lastString + char;
+        return acc;
+      },
+      [''],
+    )
+    .sort((a, b) => b.length - a.length)[0].length;
 };
