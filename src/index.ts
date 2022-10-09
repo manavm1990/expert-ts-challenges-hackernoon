@@ -31,6 +31,18 @@ export const getLenOfLongestSubstringWithoutRepeatingChars = (
 
 export const restructureArrayNumsFirstLettersSecond = (
   numsAndLetters: (number | string)[],
+  sorted = false,
 ) => {
-  throw new Error('Not implemented');
+  const nums = numsAndLetters.filter(
+    (item) => typeof item === 'number',
+  ) as number[];
+  const letters = numsAndLetters.filter(
+    (item) => typeof item === 'string',
+  ) as string[];
+
+  if (sorted) {
+    return [...nums.sort((a, b) => a - b), ...letters.sort()];
+  }
+
+  return [...nums, ...letters];
 };
