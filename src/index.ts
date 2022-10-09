@@ -28,3 +28,9 @@ export const getLenOfLongestSubstringWithoutRepeatingChars = (
     )
     .sort((a, b) => b.length - a.length)[0].length;
 };
+
+export const restructureArrayNumsFirstLettersSecond = (
+  numsAndLetters: (number | string)[],
+) => {
+  throw new Error('Not implemented');
+};
